@@ -1,0 +1,16 @@
+{
+    "experimentalServices": {
+        "fastapi": {
+            "framework": "fastapi",
+            "workspace": "fastapi-api",
+            "entrypoint": "main.py",
+            "routePrefix": "/fastapi"
+        },
+        "express": {
+            "framework": "express",
+            "workspace": "express-api",
+            "entrypoint": "index.js",
+            "routePrefix": "/express"
+        }
+    }
+}
