@@ -11,6 +11,11 @@
             "workspace": "express-api",
             "entrypoint": "index.js",
             "routePrefix": "/express"
+        },
+        "starlette": {
+            "workspace": "starlette-api",
+            "entrypoint": "main.py",
+            "routePrefix": "/starlette"
         }
     }
 }
