@@ -1,21 +1,19 @@
 {
     "experimentalServices": {
-        "fastapi": {
-            "framework": "fastapi",
-            "workspace": "fastapi-api",
-            "entrypoint": "main.py",
-            "routePrefix": "/fastapi"
-        },
-        "express": {
+        "express-api": {
             "framework": "express",
-            "workspace": "express-api",
-            "entrypoint": "index.js",
-            "routePrefix": "/express"
+            "entrypoint": "express-api/index.js",
+            "routePrefix": "/express-api"
         },
-        "starlette": {
-            "workspace": "starlette-api",
-            "entrypoint": "main.py",
-            "routePrefix": "/starlette"
+        "fastapi-api": {
+            "framework": "fastapi",
+            "entrypoint": "fastapi-api/main.py",
+            "routePrefix": "/fastapi-api"
+        },
+        "starlette-api": {
+            "framework": "python",
+            "entrypoint": "starlette-api/main.py",
+            "routePrefix": "/starlette-api"
         }
     }
 }

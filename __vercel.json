@@ -1,0 +1,38 @@
+{
+    "experimentalServices": {
+        "web": {
+            "framework": "next",
+            "entrypoint": "clients/apps/web",
+            "url": "/api",
+            "pathPrefix": "/api",
+            // _services/full_relative_path
+            "mountPath": "/api",
+            "submdomain": "api",
+            "urlVariable": "MY_BACKEND_URL",
+        },
+        "web2": {
+            "framework": "next",
+            "entrypoint": "clients/apps/web",
+            "url": "/api",
+            "pathPrefix": "/docs"
+        },
+        "server": {
+            "entrypoint": "server/polar/main.py",
+            "routePrefix": "/api",
+            "staticFolder": "server/polar/static"
+        },
+        "worker": {
+            "type": "worker",
+            "entrypoint": "server/polar/worker.py",
+            "topic": "default"
+        },
+        "crons": {
+            "type": "cron",
+            "entrypoint": "server/polar/cron.py",
+            "schedule": "0 0 * * *"
+        }
+    },
+    "envVars": {
+        "BACKEND_URL": ""
+    }
+}
