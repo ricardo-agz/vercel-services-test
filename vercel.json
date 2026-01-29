@@ -24,11 +24,6 @@
             "entrypoint": "cron-service/main.py",
             "schedule": "0 0 * * *"
         },
-        "node-cron-service": {
-            "type": "cron",
-            "entrypoint": "node-cron-service/main.js",
-            "schedule": "0 0 * * *"
-        },
         "worker-service": {
             "type": "worker",
             "entrypoint": "worker-service/main.py",
