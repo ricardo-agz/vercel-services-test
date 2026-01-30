@@ -1,15 +1,5 @@
 {
     "experimentalServices": {
-        "frontend": {
-            "workspace": "frontend",
-            "framework": "vite",
-            "routePrefix": "/"
-        },
-        "admin-panel": {
-            "workspace": "apps/admin",
-            "framework": "vite",
-            "routePrefix": "/admin"
-        },
         "express-api": {
             "entrypoint": "express-api/index.js",
             "routePrefix": "/express-api"
@@ -18,21 +8,6 @@
             "framework": "fastapi",
             "entrypoint": "fastapi-api/main.py",
             "routePrefix": "/fastapi-api"
-        },
-        "cron-service": {
-            "type": "cron",
-            "entrypoint": "cron-service/main.py",
-            "schedule": "0 0 * * *"
-        },
-        "node-cron-service": {
-            "type": "cron",
-            "entrypoint": "node-cron-service/main.js",
-            "schedule": "0 0 * * *"
-        },
-        "worker-service": {
-            "type": "worker",
-            "entrypoint": "worker-service/main.py",
-            "topic": "default"
         }
     }
 }
