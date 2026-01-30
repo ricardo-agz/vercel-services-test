@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const router = express.Router();
 const PORT = 8003;
 
 app.use(express.json());
@@ -14,19 +15,19 @@ const itemsDb = new Map([
 let nextId = 4;
 
 // Routes
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json({ message: 'Welcome to Express!', framework: 'Express' });
 });
 
-app.get('/health', (req, res) => {
+router.get('/health', (req, res) => {
   res.json({ status: 'healthy', service: 'express-api' });
 });
 
-app.get('/items', (req, res) => {
+router.get('/items', (req, res) => {
   res.json(Array.from(itemsDb.values()));
 });
 
-app.get('/items/:id', (req, res) => {
+router.get('/items/:id', (req, res) => {
   const id = parseInt(req.params.id, 10);
   const item = itemsDb.get(id);
   
@@ -37,7 +38,7 @@ app.get('/items/:id', (req, res) => {
   res.json(item);
 });
 
-app.post('/items', (req, res) => {
+router.post('/items', (req, res) => {
   const { name, price } = req.body;
   
   if (!name || price === undefined) {
@@ -56,7 +57,10 @@ app.post('/items', (req, res) => {
   res.status(201).json(newItem);
 });
 
+// Mount router at /express-api base path
+app.use('/express-api', router);
+
 app.listen(PORT, () => {
-  console.log(`Express API running on http://localhost:${PORT}`);
+  console.log(`Express API running on http://localhost:${PORT}/express-api`);
 });
 

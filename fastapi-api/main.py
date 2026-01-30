@@ -5,7 +5,8 @@ from typing import Optional
 app = FastAPI(
     title="FastAPI Service",
     description="A sample FastAPI application",
-    version="1.0.0"
+    version="1.0.0",
+    root_path="/fastapi-api"
 )
 
 # In-memory storage
